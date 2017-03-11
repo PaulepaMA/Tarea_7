@@ -9,6 +9,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
@@ -26,19 +27,29 @@ public class Gota extends ApplicationAdapter {
 	private Rectangle bucket;
 	private Array<Rectangle> raindrops;
 	private long lastDropTime;
+	private int puntos;
+	private String puntuacion;
+	BitmapFont font;
 
 	@Override
 	public void create() {
 		dropImage = new Texture(Gdx.files.internal("gota.png"));
-		bucketImage = new Texture(Gdx.files.internal("cubo.png"));
+		bucketImage = new Texture(Gdx.files.internal("gremllin2.png"));
 
 		dropSound = Gdx.audio.newSound(Gdx.files.internal("gota.wav"));
 		rainMusic = Gdx.audio.newMusic(Gdx.files.internal("lluvia.mp3"));
+
+		//puntos = 0;
+		//puntuacion = "PUNTUACIÓN: 0";
+		font = new BitmapFont();
 
 		rainMusic.setLooping(true);
 		rainMusic.play();
 
 		camera = new OrthographicCamera();
+
+
+
 		camera.setToOrtho(false, 800, 480);
 		batch = new SpriteBatch();
 
@@ -50,6 +61,8 @@ public class Gota extends ApplicationAdapter {
 
 		raindrops = new Array<Rectangle>();
 		spawnRaindrop();
+
+
 	}
 
 	private void spawnRaindrop() {
@@ -69,6 +82,11 @@ public class Gota extends ApplicationAdapter {
 
 		camera.update();
 
+		//batch.begin();
+		//font.setColor(1.0f, 1.0f, 1.0f, 1.0f);
+		//font.draw(batch, puntuacion, 20, 460);
+		//batch.end();
+
 		batch.setProjectionMatrix(camera.combined);
 
 		batch.begin();
@@ -83,12 +101,18 @@ public class Gota extends ApplicationAdapter {
 			touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
 			camera.unproject(touchPos);
 			bucket.x = touchPos.x - 64 / 2;
+			bucket.y = touchPos.y - 64 / 2;
 		}
 		if(Gdx.input.isKeyPressed(Keys.LEFT)) bucket.x -= 200 * Gdx.graphics.getDeltaTime();
 		if(Gdx.input.isKeyPressed(Keys.RIGHT)) bucket.x += 200 * Gdx.graphics.getDeltaTime();
+		if(Gdx.input.isKeyPressed(Keys.UP)) bucket.y += 200 * Gdx.graphics.getDeltaTime();
+		if(Gdx.input.isKeyPressed(Keys.DOWN)) bucket.y -= 200 * Gdx.graphics.getDeltaTime();
 
 		if(bucket.x < 0) bucket.x = 0;
 		if(bucket.x > 800 - 64) bucket.x = 800 - 64;
+
+		if(bucket.y < 0) bucket.y = 0;
+		if(bucket.y > 480 - 64) bucket.y = 480 - 64;
 
 		if(TimeUtils.nanoTime() - lastDropTime > 1000000000) spawnRaindrop();
 
@@ -98,10 +122,11 @@ public class Gota extends ApplicationAdapter {
 			raindrop.y -= 200 * Gdx.graphics.getDeltaTime();
 			if(raindrop.y + 64 < 0) iter.remove();
 			if(raindrop.overlaps(bucket)) {
-				dropSound.play();
-				iter.remove();
+				System.exit(0);
 			}
+
 		}
+
 	}
 
 	@Override
