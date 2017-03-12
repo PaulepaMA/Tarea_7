@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\paule\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-backend-android\1.9.5\293bbe05bfb5ca812c849e4d1f494f56509d5a6e\gdx-backend-android-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="293bbe05bfb5ca812c849e4d1f494f56509d5a6e">
+        <dex dex="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-backend-android-1.9.5_c43ed76afcf27cfa4279dc47380c8ed4ddee264a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\paule\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx-box2d\1.9.5\c8098219abfe00b849cc43d461b1105fea3a2944\gdx-box2d-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c8098219abfe00b849cc43d461b1105fea3a2944">
+        <dex dex="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-box2d-1.9.5_718427f0a271cbf8476b522f59163ebbc713faa1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_29a60a99e50fdfbabd7ed83e5baac0170428dd18\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3ef340113e852ab5847fb4a951330b27c11ef3ec">
+        <dex dex="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a7a07d010520ec03680220176993e3c45e710589\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\paule\.gradle\caches\modules-2\files-2.1\com.badlogicgames.gdx\gdx\1.9.5\dc65bb2f51828c58b1b2b3ac585357204d54ee5f\gdx-1.9.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dc65bb2f51828c58b1b2b3ac585357204d54ee5f">
+        <dex dex="C:\Users\paule\AndroidStudioProjects\Agua\android\build\intermediates\transforms\dex\debug\folders\1000\10\gdx-1.9.5_92bd37caf8f13bc32630f7ecabf007d16a9908ba\classes.dex" />
+    </item>
+
+</items>
